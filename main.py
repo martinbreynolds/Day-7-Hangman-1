@@ -13,14 +13,17 @@ for letter in chosen_word:
     display += '_'
 print(display)
 
+end_of_game = False
+while not end_of_game:
+  
 # Ask the user for a letter
-guessed_letter = input("Guess a letter:  ").lower()
-
+  guessed_letter = input("Guess a letter:  ").lower()
 # Check if letter user has input matches the letter in the random word and replace _ with letter.
-
-for position in range(len(chosen_word)):
-    letter = chosen_word[position]
-    if guessed_letter == letter:
+  for position in range(len(chosen_word)):
+      letter = chosen_word[position]
+      if guessed_letter == letter:
         display[position] = letter
-
-print(display)
+  print(display)
+  if '_' not in display:
+    end_of_game = True
+    print('You Win!!')
